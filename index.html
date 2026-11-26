@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Cuánto me falta para aprobar?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>¿Cuánto me falta para aprobar?</h1>
+    <p class="sub">Registra tus cursos y sus criterios, luego ingresa las notas que ya tienes.</p>
+  </header>
+
+  <main>
+    <!-- Configuración general -->
+    <section class="card" id="config">
+      <h2>Escala de notas</h2>
+      <div class="row">
+        <label>Nota máxima
+          <input type="number" id="notaMax" min="1" step="0.5" value="20">
+        </label>
+        <label>Nota mínima para aprobar
+          <input type="number" id="notaAprob" min="0" step="0.5" value="10.5">
+        </label>
+      </div>
+    </section>
+
+    <!-- Paso 1: registrar curso -->
+    <section class="card" id="nuevoCurso">
+      <h2>1. Agregar curso</h2>
+      <label>Nombre del curso
+        <input type="text" id="cursoNombre" placeholder="Ej. Cálculo I">
+      </label>
+
+      <h3>Criterios de evaluación</h3>
+      <div id="criteriosForm"></div>
+      <button type="button" class="secundario" id="btnAddCriterio">+ Agregar criterio</button>
+      <p class="suma" id="sumaPorcentajes">Total: 0%</p>
+
+      <button type="button" id="btnGuardarCurso">Guardar curso</button>
+      <p class="error" id="errorCurso"></p>
+    </section>
+
+    <!-- Paso 2: cursos y notas -->
+    <section id="listaCursos">
+      <h2 class="titulo-seccion">2. Mis cursos</h2>
+      <p class="vacio" id="sinCursos">Todavía no agregas cursos.</p>
+      <div id="cursos"></div>
+    </section>
+  </main>
+
+  <footer>
+    Los datos se guardan solo en este navegador.
+    <button type="button" class="link" id="btnBorrarTodo">Borrar todo</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
